@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemical Computing — References</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f4f1eb;
+    font-family: 'DM Mono', monospace;
+    color: #1a1a1a;
+    min-height: 100vh;
+    padding: 48px 32px;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+  }
+
+  header::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 2px;
+    background: #1a1a1a;
+    margin: 24px auto 0;
+  }
+
+  .label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: #555;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    color: #888;
+    letter-spacing: 0.05em;
+    margin-top: 6px;
+  }
+
+  /* GitHub banner */
+  .github-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #1a1a1a;
+    color: #f4f1eb;
+    border-radius: 6px;
+    padding: 14px 24px;
+    margin-bottom: 40px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    transition: background 0.2s;
+  }
+
+  .github-banner:hover { background: #333; }
+
+  .github-banner svg {
+    width: 20px;
+    height: 20px;
+    fill: #f4f1eb;
+    flex-shrink: 0;
+  }
+
+  .github-banner span { font-weight: 500; }
+  .github-banner .gh-url { color: #aaa; font-size: 10px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid #e0dbd0;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ref-num {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #bbb;
+    padding-top: 2px;
+    min-width: 24px;
+  }
+
+  .ref-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    font-weight: 400;
+  }
+
+  .ref-authors {
+    font-size: 10px;
+    color: #777;
+    letter-spacing: 0.03em;
+    padding-left: 34px;
+  }
+
+  .ref-venue {
+    font-size: 10px;
+    color: #999;
+    font-style: italic;
+    padding-left: 34px;
+  }
+
+  .card-actions {
+    padding-left: 34px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .btn-doi {
+    font-size: 10px;
+    color: #5580aa;
+    text-decoration: none;
+    border: 1px solid #c0d4ea;
+    border-radius: 4px;
+    padding: 3px 10px;
+    background: #eef4fb;
+    transition: background 0.15s;
+  }
+
+  .btn-doi:hover { background: #ddeaf7; }
+
+  .btn-copy {
+    font-size: 10px;
+    color: #777;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px 10px;
+    cursor: pointer;
+    font-family: 'DM Mono', monospace;
+    transition: background 0.15s;
+  }
+
+  .btn-copy:hover { background: #e4e4e4; }
+
+  .accent-bar {
+    height: 3px;
+    border-radius: 2px 2px 0 0;
+    margin: -20px -20px 0;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .c1 { background: #a8c7e8; }
+  .c2 { background: #b5d5b5; }
+  .c3 { background: #e8c7a8; }
+  .c4 { background: #c7a8e8; }
+  .c5 { background: #e8a8c7; }
+  .c6 { background: #a8e8e0; }
+  .c7 { background: #e8e0a8; }
+
+  footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #ddd8cc;
+    font-size: 10px;
+    color: #bbb;
+    letter-spacing: 0.08em;
+  }
+
+  @media print {
+    body { background: white; padding: 24px; }
+    .card:hover { box-shadow: none; transform: none; }
+    .github-banner { background: #333; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="label">Academic Reference Sheet</p>
+    <h1>Chemical <em>Computing</em></h1>
+    <p class="subtitle">7 key papers in chemical computing & BZ reaction research</p>
+  </header>
+
+  <a class="github-banner" href="https://github.com/engnourhanmustafa5-hub/Oregonator-Simulation" target="_blank">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+    </svg>
+    <div>
+      <span>Oregonator Simulation — Related GitHub Project</span><br>
+      <span class="gh-url">github.com/engnourhanmustafa5-hub/Oregonator-Simulation</span>
+    </div>
+  </a>
+
+  <div class="grid" id="grid"></div>
+
+  <footer>CHEMICAL COMPUTING &nbsp;·&nbsp; 7 REFERENCES &nbsp;·&nbsp; CLICK DOI TO ACCESS PAPER</footer>
+</div>
+
+<script>
+const refs = [
+  { n:"01", color:"c1", title:"A programmable chemical computer with memory and pattern recognition", authors:"J. M. Parrilla-Gutierrez et al.", venue:"Nat. Commun., vol. 11, no. 1, p. 1442, Mar. 2020", doi:"https://doi.org/10.1038/s41467-020-15190-3", full:'J. M. Parrilla-Gutierrez et al., "A programmable chemical computer with memory and pattern recognition," Nat. Commun., vol. 11, no. 1, p. 1442, Mar. 2020, doi: 10.1038/s41467-020-15190-3.' },
+  { n:"02", color:"c2", title:"Chemical memory with states coded in light-controlled oscillations of interacting Belousov–Zhabotinsky droplets", authors:"K. Gizynski and J. Gorecki", venue:"Phys. Chem. Chem. Phys., vol. 19, no. 9, pp. 6519–6531, 2017", doi:"https://doi.org/10.1039/C6CP07492H", full:'K. Gizynski and J. Gorecki, "Chemical memory with states coded in light-controlled oscillations of interacting Belousov–Zhabotinsky droplets," Phys. Chem. Chem. Phys., vol. 19, no. 9, pp. 6519–6531, 2017, doi: 10.1039/C6CP07492H.' },
+  { n:"03", color:"c3", title:"Native chemical computation. A generic application of oscillating chemistry illustrated with the Belousov-Zhabotinsky reaction. A review", authors:"M. Dueñas-Díez and J. Pérez-Mercader", venue:"Front. Chem., vol. 9, p. 611120, May 2021", doi:"https://doi.org/10.3389/fchem.2021.611120", full:'M. Dueñas-Díez and J. Pérez-Mercader, "Native chemical computation. A generic application of oscillating chemistry illustrated with the Belousov-Zhabotinsky reaction. A review," Front. Chem., vol. 9, p. 611120, May 2021, doi: 10.3389/fchem.2021.611120.' },
+  { n:"04", color:"c4", title:"Chemical computing with reaction–diffusion processes", authors:"J. Gorecki et al.", venue:"Philos. Trans. R. Soc. A, vol. 373, no. 2046, p. 20140219, Jul. 2015", doi:"https://doi.org/10.1098/rsta.2014.0219", full:'J. Gorecki et al., "Chemical computing with reaction–diffusion processes," Philos. Trans. R. Soc. A, vol. 373, no. 2046, p. 20140219, Jul. 2015, doi: 10.1098/rsta.2014.0219.' },
+  { n:"05", color:"c5", title:"Information processing using networks of chemical oscillators", authors:"J. Gorecki", venue:"Entropy, vol. 24, no. 8, p. 1054, Jul. 2022", doi:"https://doi.org/10.3390/e24081054", full:'J. Gorecki, "Information processing using networks of chemical oscillators," Entropy, vol. 24, no. 8, p. 1054, Jul. 2022, doi: 10.3390/e24081054.' },
+  { n:"06", color:"c6", title:"Programming weakly connected chemical oscillators to simulate logic gates and cellular automata", authors:"J. M. Parrilla-Gutierrez, A. Sharma, S. Tsuda, and L. Cronin", venue:"Proc. ALife 2024, MIT Press", doi:"https://doi.org/10.1162/isal_a_00803", full:'J. M. Parrilla-Gutierrez et al., "Programming weakly connected chemical oscillators to simulate logic gates and cellular automata," Proc. ALife 2024, MIT Press, doi: 10.1162/isal_a_00803.' },
+  { n:"07", color:"c7", title:"Real-time signal processing via chemical reactions for a microfluidic molecular communication system", authors:"V. Walter et al.", venue:"Nat. Commun., vol. 14, no. 1, p. 7188, Nov. 2023", doi:"https://doi.org/10.1038/s41467-023-42885-0", full:'V. Walter et al., "Real-time signal processing via chemical reactions for a microfluidic molecular communication system," Nat. Commun., vol. 14, no. 1, p. 7188, Nov. 2023, doi: 10.1038/s41467-023-42885-0.' },
+];
+
+const grid = document.getElementById("grid");
+
+refs.forEach(r => {
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = `
+    <div class="accent-bar ${r.color}"></div>
+    <div class="card-top">
+      <span class="ref-num">[${r.n}]</span>
+      <span class="ref-title">${r.title}</span>
+    </div>
+    <div class="ref-authors">${r.authors}</div>
+    <div class="ref-venue">${r.venue}</div>
+    <div class="card-actions">
+      <a class="btn-doi" href="${r.doi}" target="_blank">DOI ↗</a>
+      <button class="btn-copy" onclick="copyRef(this, '${r.n}')">copy citation</button>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+function copyRef(btn, n) {
+  const r = refs.find(x => x.n === n);
+  navigator.clipboard.writeText(r.full).then(() => {
+    btn.textContent = "copied ✓";
+    setTimeout(() => btn.textContent = "copy citation", 1600);
+  });
+}
+</script>
+</body>
+</html>
